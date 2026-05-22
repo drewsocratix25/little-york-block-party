@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Meet the Neighbors — Little York Block Party</title>
-<meta name="description" content="A quick questionnaire so we can introduce you to the rest of the loop before the block party.">
+<title>Meet the Neighbors — Kitner, Shady &amp; Oviatt Block Party</title>
+<meta name="description" content="A quick questionnaire so we can introduce you to the rest of the neighborhood before the block party.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Patrick+Hand&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
@@ -409,11 +409,11 @@ footer a {
   <header class="hdr">
     <p class="hdr-tag">— before the party —</p>
     <h1>Meet <span class="accent">the Neighbors</span></h1>
-    <p class="hdr-sub">A few questions so we can introduce you to the loop on our Facebook group.</p>
+    <p class="hdr-sub">A few questions so we can introduce you to the neighborhood on our Facebook group.</p>
   </header>
 
   <section class="intro">
-    <p><strong>Here's the idea:</strong> in the weeks leading up to August 1, we want to introduce everybody on the loop to each other. We'll post a short profile of you on the neighborhood Facebook group — a photo, a few sentences about your household, what brought you here, what you're into.</p>
+    <p><strong>Here's the idea:</strong> in the weeks leading up to August 1, we want to introduce everybody across Kitner, Shady, and Oviatt to each other. We'll post a short profile of you on the neighborhood Facebook group — a photo, a few sentences about your household, what brought you here, what you're into.</p>
     <p>This is the questionnaire. Five minutes, tops. Skip anything you'd rather not share.</p>
     <p style="margin-top: 14px;"><strong>What we'll do with it:</strong></p>
     <ul class="intro-bullets">
@@ -471,7 +471,7 @@ footer a {
 
       <div class="field">
         <label class="field-label" for="m-howlong">
-          How long have you been on the loop?
+          How long have you been in the neighborhood?
         </label>
         <input type="text" id="m-howlong" placeholder="e.g., 3 years, 50 years, just moved in last month">
       </div>
@@ -535,7 +535,7 @@ footer a {
       <p class="section-label">a photo</p>
       <p class="section-headline">A family photo</p>
       <p style="font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.55; color: var(--ink); margin-bottom: 16px;">
-        Anything you'd be happy to share with the loop — household, pets, you doing something you love. Doesn't need to be perfect.
+        Anything you'd be happy to share with the neighborhood — household, pets, you doing something you love. Doesn't need to be perfect.
       </p>
 
       <label class="photo-upload" for="m-photo">
@@ -579,6 +579,10 @@ footer a {
 </div>
 
 <script>
+// Supabase config (same project as the main site)
+const SUPABASE_URL = 'https://crdxgaqpluvdcropvxrk.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNyZHhnYXFwbHV2ZGNyb3B2eHJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk0NTg0MDUsImV4cCI6MjA5NTAzNDQwNX0.nzBjPEWp1fdb-tFkvh5Z5wjWQtHOOT9g0tQ3KHIviAc';
+
 function previewPhoto(e) {
   const file = e.target.files[0];
   if (!file) return;
@@ -591,7 +595,7 @@ function previewPhoto(e) {
   reader.readAsDataURL(file);
 }
 
-function submitProfile(e) {
+async function submitProfile(e) {
   e.preventDefault();
 
   const householdEl = document.getElementById('m-household');
@@ -624,29 +628,60 @@ function submitProfile(e) {
     return false;
   }
 
-  // In production, this would POST to your backend (Supabase, Railway, etc).
-  // For now, log to console so Drew can see what was submitted.
-  const data = {
-    household: householdEl.value.trim(),
-    firstnames: document.getElementById('m-firstnames').value.trim(),
-    address: document.getElementById('m-address').value.trim(),
-    email: emailEl.value.trim(),
-    howlong: document.getElementById('m-howlong').value.trim(),
-    whyhere: document.getElementById('m-whyhere').value.trim(),
-    household_desc: document.getElementById('m-household-desc').value.trim(),
-    from: document.getElementById('m-from').value.trim(),
-    northfield: document.getElementById('m-northfield').value.trim(),
-    fun: document.getElementById('m-fun').value.trim(),
-    anything: document.getElementById('m-anything').value.trim(),
-    photo_filename: document.getElementById('m-photo').files[0]?.name || null,
-    submitted_at: new Date().toISOString()
-  };
-  console.log('Meet the Neighbors submission:', data);
+  const submitBtn = document.querySelector('.submit-row .cta');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
 
-  document.getElementById('confirmation').classList.add('show');
-  document.getElementById('confirmation').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  document.getElementById('meet-form').reset();
-  document.getElementById('photo-preview').classList.remove('show');
+  const payload = {
+    household_name: householdEl.value.trim(),
+    first_names: document.getElementById('m-firstnames').value.trim() || null,
+    street_address: document.getElementById('m-address').value.trim() || null,
+    email: emailEl.value.trim(),
+    how_long: document.getElementById('m-howlong').value.trim() || null,
+    why_here: document.getElementById('m-whyhere').value.trim() || null,
+    household_desc: document.getElementById('m-household-desc').value.trim() || null,
+    originally_from: document.getElementById('m-from').value.trim() || null,
+    northfield_love: document.getElementById('m-northfield').value.trim() || null,
+    fun_activities: document.getElementById('m-fun').value.trim() || null,
+    anything_else: document.getElementById('m-anything').value.trim() || null,
+    photo_filename: document.getElementById('m-photo').files[0]?.name || null,
+    photo_url: null  // photo upload to storage to be added separately
+  };
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/meet_the_neighbors`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Supabase error ${response.status}: ${text.slice(0, 200)}`);
+    }
+
+    document.getElementById('confirmation').classList.add('show');
+    document.getElementById('confirmation').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('meet-form').reset();
+    document.getElementById('photo-preview').classList.remove('show');
+
+  } catch (err) {
+    console.error('Profile submission failed:', err);
+    const confirmEl = document.getElementById('confirmation');
+    confirmEl.querySelector('h4').textContent = 'Something went wrong';
+    confirmEl.querySelector('p').textContent = "Couldn't save your answers. Try again, or knock on 7643 Kitner.";
+    confirmEl.classList.add('show');
+    confirmEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalLabel;
+  }
 
   return false;
 }
