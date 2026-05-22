@@ -563,6 +563,45 @@ fieldset legend {
 .error-message.show { display: block; }
 .field input.error { border-color: var(--tomato); border-width: 3px; }
 
+/* Meet the Neighbors opt-in card */
+.meet-optin {
+  margin: 8px 0 16px;
+  padding: 18px 20px;
+  background: var(--cream-deep);
+  border: 2px dashed var(--tomato);
+  position: relative;
+  transform: rotate(-0.4deg);
+}
+
+.meet-optin-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.meet-optin-label input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--tomato);
+  cursor: pointer;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.meet-optin-label strong {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 19px;
+  color: var(--tomato-deep);
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
 .submit-row {
   text-align: center;
   margin-top: 32px;
@@ -1083,6 +1122,16 @@ footer a:hover { color: var(--tomato); }
           <textarea id="f-ideas" placeholder="A game we should play, a neighbor we should make sure to invite, something we haven't thought of..."></textarea>
         </div>
 
+        <div class="meet-optin">
+          <label class="meet-optin-label">
+            <input type="checkbox" id="f-meet-optin">
+            <span>
+              <strong>Want to be featured before the party?</strong><br>
+              We'd love to introduce you to the rest of the loop on our Facebook group — a quick "meet the neighbors" post with a photo and a little about you. Check this box and we'll send you a short questionnaire (takes 5 mins, you can skip any question you want).
+            </span>
+          </label>
+        </div>
+
         <div class="submit-row">
           <button type="button" class="cta" onclick="submitRsvp()">Count me in! →</button>
         </div>
@@ -1133,6 +1182,7 @@ function submitRsvp() {
   const bringingCat = document.getElementById('f-bringing').value;
   const dish = document.getElementById('f-dish').value.trim();
   const contribs = Array.from(document.querySelectorAll('.check-row input:checked')).map(c => c.value);
+  const wantsFeature = document.getElementById('f-meet-optin').checked;
 
   if (!name) {
     nameEl.classList.add('error');
@@ -1165,7 +1215,13 @@ function submitRsvp() {
 
   rsvps.push({ name, bringing, note: noteParts.join(' · ') || '—' });
   renderList();
-  showConfirmation();
+
+  if (wantsFeature) {
+    showConfirmation("You're on the list! Redirecting you to the 'Meet the Neighbors' page in a sec...");
+    setTimeout(() => { window.location.href = 'meet-the-neighbors.html'; }, 2200);
+  } else {
+    showConfirmation();
+  }
   resetForm();
 }
 
@@ -1197,6 +1253,7 @@ function resetForm() {
   });
   document.querySelector('input[name="attending"][value="yes"]').checked = true;
   document.querySelectorAll('.check-row input').forEach(c => c.checked = false);
+  document.getElementById('f-meet-optin').checked = false;
 }
 
 function escapeHtml(str) {
