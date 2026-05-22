@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>The Little York Block Party — Saturday, August 1, 2026</title>
+<meta name="description" content="First annual block party for the Little York loop in Northfield, Ohio. Saturday August 1, 2026. RSVP and sign up to bring something.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Patrick+Hand&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:        #faf3e3;
+  --cream-deep:   #f0e6cd;
+  --ink:          #1f1812;
+  --ink-soft:     #4a3a2c;
+  --tomato:       #d94427;
+  --tomato-deep:  #a8321a;
+  --sky:          #4a90a4;
+  --grass:        #6b8e3a;
+  --sunny:        #e8b13a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  color-scheme: light;
+  background: var(--cream);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--cream) !important;
+  color: var(--ink) !important;
+  color-scheme: light;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.55;
+  min-height: 100vh;
+  forced-color-adjust: none;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' seed='5'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.09  0 0 0 0 0.07  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 12px 18px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 12px; top: 12px;
+  outline: 3px solid var(--tomato);
+  outline-offset: 2px;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--tomato);
+  outline-offset: 3px;
+}
+
+::selection { background: var(--tomato); color: var(--cream); }
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  position: relative;
+}
+
+.hero {
+  text-align: center;
+  padding: 24px 0 32px;
+  position: relative;
+}
+
+.hero-string-lights {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 8px;
+}
+.hero-string-lights svg { width: 100%; height: 100%; display: block; }
+
+.hero-tag {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 22px;
+  color: var(--tomato);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+.hero h1 {
+  font-family: 'Caveat Brush', cursive;
+  font-weight: 400;
+  font-size: clamp(56px, 11vw, 110px);
+  line-height: 0.92;
+  color: var(--ink);
+  letter-spacing: -1px;
+  margin: 4px 0 12px;
+  text-shadow: 2px 2px 0 rgba(217, 68, 39, 0.12);
+}
+
+.hero h1 .accent {
+  color: var(--tomato);
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+.hero-subtitle {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: clamp(20px, 2.8vw, 26px);
+  color: var(--ink);
+  max-width: 540px;
+  margin: 12px auto 0;
+  line-height: 1.4;
+}
+
+.hero-date-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 14px 26px;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 var(--tomato);
+}
+
+.hero-date-strip .dot {
+  width: 8px; height: 8px; background: var(--tomato);
+  border-radius: 50%;
+}
+
+.illustration {
+  margin: 32px auto 16px;
+  max-width: 720px;
+  padding: 0 20px;
+}
+.illustration svg {
+  width: 100%; height: auto; display: block;
+  color: var(--ink);
+}
+
+.invite {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.invite-headline {
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(32px, 5vw, 44px);
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.invite-headline .ink-red { color: var(--tomato); }
+
+.invite p {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.invite p strong { color: var(--tomato-deep); font-weight: 600; }
+
+.cta-row {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--tomato);
+  color: var(--cream);
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transform: rotate(-1deg);
+}
+.cta:hover { transform: rotate(-1deg) translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.cta:active { transform: rotate(-1deg) translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+.cta.cta-sky { background: var(--sky); transform: rotate(1deg); }
+.cta.cta-sky:hover { transform: rotate(1deg) translate(-2px, -2px); }
+.cta.cta-sky:active { transform: rotate(1deg) translate(2px, 2px); }
+
+.squiggle {
+  margin: 56px auto;
+  max-width: 320px;
+  height: 24px;
+  color: var(--tomato);
+  opacity: 0.65;
+}
+.squiggle svg { width: 100%; height: 100%; display: block; }
+
+.whats-up {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.whats-up h2 {
+  text-align: center;
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(36px, 5vw, 48px);
+  color: var(--ink);
+  margin-bottom: 36px;
+  line-height: 1;
+}
+.whats-up h2 .underline-doodle {
+  display: block;
+  margin: 4px auto 0;
+  width: 200px;
+  color: var(--tomato);
+}
+
+.whats-up-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 700px) { .whats-up-grid { grid-template-columns: 1fr; gap: 20px; } }
+
+.fun-card {
+  background: var(--cream);
+  padding: 28px 22px 24px;
+  border: 3px solid var(--ink);
+  text-align: center;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.fun-card:nth-child(1) { transform: rotate(-1.5deg); box-shadow: 5px 5px 0 var(--tomato); }
+.fun-card:nth-child(2) { transform: rotate(0.8deg); box-shadow: 5px 5px 0 var(--sky); }
+.fun-card:nth-child(3) { transform: rotate(-0.6deg); box-shadow: 5px 5px 0 var(--grass); }
+.fun-card:hover { transform: rotate(0) translateY(-3px); }
+
+.fun-card .icon { width: 64px; height: 64px; margin: 0 auto 12px; }
+.fun-card .icon svg { width: 100%; height: 100%; }
+.fun-card:nth-child(1) .icon { color: var(--tomato); }
+.fun-card:nth-child(2) .icon { color: var(--sky); }
+.fun-card:nth-child(3) .icon { color: var(--grass); }
+
+.fun-card h3 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 36px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.fun-card p {
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.history {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  position: relative;
+}
+.history-banner { text-align: center; margin-bottom: 24px; }
+.history-banner .label {
+  display: inline-block;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 6px 18px;
+  letter-spacing: 1px;
+  transform: rotate(-1deg);
+}
+.history h2 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(36px, 5vw, 48px);
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+.history h2 .a { color: var(--tomato); display: inline-block; transform: rotate(-3deg); }
+.history p {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.history p strong { font-weight: 600; color: var(--tomato-deep); }
+
+.history-coda {
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: var(--cream-deep);
+  border-left: 5px solid var(--tomato);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+  transform: rotate(-0.5deg);
+}
+
+.list-section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.list-section h2 {
+  text-align: center;
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(36px, 5vw, 48px);
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.list-intro {
+  text-align: center;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 20px;
+  color: var(--ink);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.4;
+}
+
+.list-paper {
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  padding: 32px 32px 36px;
+  position: relative;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+@media (max-width: 540px) { .list-paper { padding: 24px 20px; } }
+.list-paper::before {
+  content: '';
+  position: absolute;
+  left: 24px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--tomato);
+  opacity: 0.4;
+}
+
+.list-head {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed var(--ink);
+  margin-bottom: 8px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  color: var(--tomato-deep);
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) { .list-head { display: none; } }
+
+.list-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--ink-soft);
+  align-items: baseline;
+}
+.list-row:last-child { border-bottom: none; }
+.list-row .r-name { font-family: 'Patrick Hand', sans-serif; font-size: 20px; color: var(--ink); }
+.list-row .r-bringing { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--tomato-deep); font-weight: 500; }
+.list-row .r-note { font-family: 'Fraunces', serif; font-size: 16px; color: var(--ink); font-style: italic; }
+
+@media (max-width: 600px) {
+  .list-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 0; }
+  .list-row .r-bringing::before {
+    content: 'bringing: ';
+    font-family: 'Patrick Hand', sans-serif;
+    font-style: normal;
+    color: var(--tomato);
+    margin-right: 4px;
+  }
+}
+
+.list-empty {
+  text-align: center;
+  padding: 28px 16px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 19px;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.signup { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+.signup h2 {
+  text-align: center;
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(40px, 6vw, 56px);
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.signup h2 .accent { color: var(--tomato); display: inline-block; transform: rotate(-3deg); }
+
+.signup-intro {
+  text-align: center;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.signup-form {
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  padding: 36px 36px 32px;
+  box-shadow: 6px 6px 0 var(--tomato);
+}
+@media (max-width: 540px) { .signup-form { padding: 24px 20px; } }
+
+.notice {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 17px;
+  color: var(--ink);
+  background: var(--cream-deep);
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  border-left: 4px solid var(--sky);
+  line-height: 1.45;
+}
+.notice strong { color: var(--tomato-deep); font-weight: normal; }
+
+.field { margin-bottom: 22px; }
+
+.field-label {
+  display: block;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.field-label .req { color: var(--tomato); margin-left: 2px; }
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 12px;
+  color: var(--cream);
+  background: var(--tomato);
+  letter-spacing: 1px;
+  vertical-align: 2px;
+}
+.tag.private { background: var(--sky); }
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="number"],
+.field select {
+  width: 100%;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  color: var(--ink);
+  padding: 10px 12px;
+  border-radius: 0;
+  appearance: none;
+}
+.field input::placeholder { color: rgba(31, 24, 18, 0.45); font-style: italic; }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--tomato);
+  background: #fffaef;
+}
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 540px) { .field-row { grid-template-columns: 1fr; gap: 22px; } }
+
+.field textarea {
+  width: 100%;
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  padding: 12px;
+  min-height: 100px;
+  resize: vertical;
+  border-radius: 0;
+}
+
+fieldset { border: none; padding: 0; margin-bottom: 22px; }
+fieldset legend {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.radio-row, .check-row { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.radio-row label, .check-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 4px 0;
+}
+.radio-row input, .check-row input {
+  width: 20px; height: 20px;
+  accent-color: var(--tomato);
+  cursor: pointer;
+}
+
+.error-message {
+  display: none;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  color: var(--tomato);
+  margin-top: 4px;
+}
+.error-message.show { display: block; }
+.field input.error { border-color: var(--tomato); border-width: 3px; }
+
+.submit-row {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px dashed var(--ink);
+}
+.submit-row .cta { font-size: 24px; }
+
+.confirmation {
+  display: none;
+  margin-top: 24px;
+  padding: 24px;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  transform: rotate(-0.5deg);
+  box-shadow: 4px 4px 0 var(--tomato);
+}
+.confirmation.show { display: block; }
+.confirmation h4 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 32px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+.confirmation p {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+  color: var(--cream);
+}
+
+.fb-block {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+.fb-block h2 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(32px, 4.5vw, 42px);
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.fb-block p {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 22px;
+  max-width: 460px;
+  margin-left: auto; margin-right: auto;
+}
+
+.fb-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #1877f2;
+  color: white;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 19px;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(-1deg);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.fb-cta:hover { transform: rotate(-1deg) translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.fb-cta:active { transform: rotate(-1deg) translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.fb-cta svg { width: 22px; height: 22px; fill: currentColor; }
+
+footer {
+  margin-top: 80px;
+  padding: 32px 16px 0;
+  border-top: 3px dashed var(--ink);
+  text-align: center;
+}
+footer p {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+footer .signoff {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 28px;
+  color: var(--tomato);
+  margin-top: 16px;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+footer a {
+  color: var(--tomato-deep);
+  text-decoration: none;
+  border-bottom: 2px solid var(--tomato);
+}
+footer a:hover { color: var(--tomato); }
+
+@keyframes popIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.96); }
+  60%  { opacity: 1; transform: translateY(-4px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero, .illustration, .invite, .whats-up,
+.history, .list-section, .signup, .fb-block {
+  animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+.illustration { animation-delay: 0.1s; }
+.invite { animation-delay: 0.2s; }
+.whats-up { animation-delay: 0.3s; }
+.history { animation-delay: 0.4s; }
+.list-section { animation-delay: 0.5s; }
+.signup { animation-delay: 0.6s; }
+.fb-block { animation-delay: 0.7s; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="page">
+
+  <header class="hero">
+
+    <div class="hero-string-lights" aria-hidden="true">
+      <svg viewBox="0 0 800 60">
+        <path d="M0 8 Q 200 50, 400 28 T 800 8" stroke="#1f1812" stroke-width="1.5" fill="none"/>
+        <g>
+          <circle cx="80"  cy="28" r="6" fill="#e8b13a" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="80" y1="22" x2="80" y2="18" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="160" cy="40" r="6" fill="#d94427" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="160" y1="34" x2="160" y2="30" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="240" cy="44" r="6" fill="#4a90a4" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="240" y1="38" x2="240" y2="34" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="320" cy="40" r="6" fill="#e8b13a" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="320" y1="34" x2="320" y2="30" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="400" cy="32" r="6" fill="#6b8e3a" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="400" y1="26" x2="400" y2="22" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="480" cy="28" r="6" fill="#d94427" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="480" y1="22" x2="480" y2="18" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="560" cy="22" r="6" fill="#e8b13a" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="560" y1="16" x2="560" y2="12" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="640" cy="18" r="6" fill="#4a90a4" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="640" y1="12" x2="640" y2="8" stroke="#1f1812" stroke-width="1"/>
+          <circle cx="720" cy="12" r="6" fill="#d94427" stroke="#1f1812" stroke-width="1.2"/>
+          <line x1="720" y1="6" x2="720" y2="2" stroke="#1f1812" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+
+    <p class="hero-tag">— hey neighbor —</p>
+
+    <h1>
+      <span class="accent">Little York</span><br>
+      Block Party!
+    </h1>
+
+    <p class="hero-subtitle">
+      Pull up a chair. Bring something to share. Meet the folks down the street.
+    </p>
+
+    <div class="hero-date-strip">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Saturday · August 1 · 2026</span>
+      <span class="dot" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <div class="illustration" aria-hidden="true">
+    <svg viewBox="0 0 800 200" role="img" aria-label="A backyard cookout scene with grill, lawn chair, and picnic table">
+      <line x1="20" y1="170" x2="780" y2="170" stroke="#1f1812" stroke-width="1.5"/>
+      <g stroke="#6b8e3a" stroke-width="1.2" fill="none">
+        <path d="M40 170 Q 42 162, 44 170 M 48 170 Q 50 164, 52 170 M 56 170 Q 58 162, 60 170"/>
+        <path d="M180 170 Q 182 164, 184 170 M 188 170 Q 190 162, 192 170"/>
+        <path d="M620 170 Q 622 162, 624 170 M 628 170 Q 630 164, 632 170 M 636 170 Q 638 162, 640 170"/>
+        <path d="M740 170 Q 742 164, 744 170 M 748 170 Q 750 162, 752 170"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="2" fill="none">
+        <ellipse cx="120" cy="98" rx="44" ry="12"/>
+        <path d="M76 98 Q 76 72, 120 72 Q 164 72, 164 98"/>
+        <line x1="116" y1="72" x2="124" y2="72" stroke-width="3"/>
+        <path d="M76 98 L 76 122 Q 76 134, 90 134 L 150 134 Q 164 134, 164 122 L 164 98"/>
+        <line x1="86" y1="134" x2="78" y2="166"/>
+        <line x1="154" y1="134" x2="162" y2="166"/>
+        <circle cx="78" cy="166" r="6" fill="#1f1812"/>
+        <circle cx="162" cy="166" r="6" fill="#1f1812"/>
+        <circle cx="120" cy="84" r="4"/>
+        <line x1="116" y1="84" x2="124" y2="84"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="1.4" fill="none" opacity="0.7">
+        <path d="M108 70 Q 102 58, 110 50 Q 118 42, 110 30 Q 102 22, 108 12"/>
+        <path d="M122 70 Q 130 56, 122 46 Q 114 36, 122 24"/>
+        <path d="M134 72 Q 128 60, 134 52"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="2" fill="none">
+        <rect x="280" y="120" width="240" height="14"/>
+        <line x1="290" y1="134" x2="290" y2="148" stroke-width="1.5"/>
+        <line x1="510" y1="134" x2="510" y2="148" stroke-width="1.5"/>
+        <path d="M290 148 Q 330 142, 370 148 T 450 148 T 510 148" stroke-width="1.5"/>
+        <line x1="300" y1="134" x2="294" y2="170" stroke-width="2"/>
+        <line x1="500" y1="134" x2="506" y2="170" stroke-width="2"/>
+        <line x1="294" y1="170" x2="506" y2="170"/>
+      </g>
+      <g fill="#d94427">
+        <rect x="304" y="136" width="8" height="8"/>
+        <rect x="320" y="136" width="8" height="8"/>
+        <rect x="336" y="136" width="8" height="8"/>
+        <rect x="352" y="136" width="8" height="8"/>
+        <rect x="368" y="136" width="8" height="8"/>
+        <rect x="384" y="136" width="8" height="8"/>
+        <rect x="400" y="136" width="8" height="8"/>
+        <rect x="416" y="136" width="8" height="8"/>
+        <rect x="432" y="136" width="8" height="8"/>
+        <rect x="448" y="136" width="8" height="8"/>
+        <rect x="464" y="136" width="8" height="8"/>
+        <rect x="480" y="136" width="8" height="8"/>
+        <rect x="496" y="136" width="8" height="8"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="1.5" fill="none">
+        <ellipse cx="340" cy="116" rx="22" ry="5"/>
+        <path d="M318 116 Q 318 108, 340 108 Q 362 108, 362 116"/>
+        <line x1="324" y1="113" x2="356" y2="113" stroke-width="0.8"/>
+        <ellipse cx="400" cy="116" rx="18" ry="4"/>
+        <path d="M382 116 Q 382 124, 400 126 Q 418 124, 418 116"/>
+        <path d="M448 96 L448 102 L444 108 L444 122 L456 122 L456 108 L452 102 L452 96 Z"/>
+        <line x1="445" y1="112" x2="455" y2="112" stroke-width="0.8"/>
+        <path d="M478 110 L 476 124 L 484 124 L 482 110 Z"/>
+        <path d="M488 112 L 487 124 L 493 124 L 492 112 Z"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="2" fill="none">
+        <line x1="610" y1="90" x2="618" y2="140"/>
+        <line x1="650" y1="90" x2="642" y2="140"/>
+        <line x1="612" y1="100" x2="648" y2="100" stroke="#d94427"/>
+        <line x1="613" y1="110" x2="647" y2="110" stroke="#d94427"/>
+        <line x1="614" y1="120" x2="646" y2="120" stroke="#d94427"/>
+        <line x1="615" y1="130" x2="645" y2="130" stroke="#d94427"/>
+        <line x1="618" y1="140" x2="676" y2="140"/>
+        <line x1="676" y1="140" x2="676" y2="148"/>
+        <line x1="618" y1="148" x2="676" y2="148"/>
+        <line x1="624" y1="143" x2="670" y2="143" stroke="#d94427"/>
+        <line x1="618" y1="140" x2="612" y2="170"/>
+        <line x1="676" y1="140" x2="682" y2="170"/>
+        <line x1="618" y1="148" x2="612" y2="170"/>
+        <line x1="676" y1="148" x2="682" y2="170"/>
+        <line x1="610" y1="120" x2="606" y2="138"/>
+        <line x1="650" y1="120" x2="654" y2="138"/>
+      </g>
+      <g stroke="#e8b13a" stroke-width="2" fill="#e8b13a" fill-opacity="0.2">
+        <circle cx="740" cy="40" r="18"/>
+      </g>
+      <g stroke="#e8b13a" stroke-width="1.5">
+        <line x1="740" y1="14" x2="740" y2="6"/>
+        <line x1="740" y1="74" x2="740" y2="66"/>
+        <line x1="714" y1="40" x2="706" y2="40"/>
+        <line x1="774" y1="40" x2="766" y2="40"/>
+        <line x1="722" y1="22" x2="717" y2="17"/>
+        <line x1="758" y1="58" x2="763" y2="63"/>
+        <line x1="722" y1="58" x2="717" y2="63"/>
+        <line x1="758" y1="22" x2="763" y2="17"/>
+      </g>
+      <g stroke="#1f1812" stroke-width="1" fill="none">
+        <path d="M220 50 Q 224 46, 228 50 Q 232 46, 236 50"/>
+        <path d="M560 30 Q 564 26, 568 30 Q 572 26, 576 30"/>
+      </g>
+    </svg>
+  </div>
+
+  <main id="main">
+
+    <section class="invite" aria-labelledby="invite-h">
+      <h2 id="invite-h" class="invite-headline">
+        We're closing the street.<br>
+        <span class="ink-red">You're invited.</span>
+      </h2>
+      <p>First-ever Little York block party — happening right here on our loop off Olde Eight.</p>
+      <p><strong>BYOB. Potluck-style. Kids welcome.</strong> No fees, no formalities. Just neighbors, food, and an afternoon together.</p>
+
+      <div class="cta-row">
+        <a href="#signup" class="cta">Count me in →</a>
+        <a href="#list" class="cta cta-sky">See who's coming</a>
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12"
+              stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="whats-up" aria-labelledby="whats-up-h">
+      <h2 id="whats-up-h">
+        Here's the deal
+        <svg class="underline-doodle" viewBox="0 0 200 12" aria-hidden="true">
+          <path d="M2 6 Q 50 2, 100 6 T 198 6" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+      </h2>
+
+      <div class="whats-up-grid">
+
+        <article class="fun-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M18 12 L20 56 Q 20 58, 22 58 L 42 58 Q 44 58, 44 56 L 46 12 Z" stroke="currentColor" stroke-width="2"/>
+              <line x1="19" y1="22" x2="45" y2="22" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M18 12 Q 22 6, 26 12 Q 30 6, 32 12 Q 36 6, 38 12 Q 42 6, 46 12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M46 22 Q 56 24, 56 36 Q 56 46, 46 46" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h3>BYOB</h3>
+          <p>Bring what you like to drink. We'll have water & lemonade for the kids.</p>
+        </article>
+
+        <article class="fun-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <ellipse cx="32" cy="46" rx="24" ry="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 46 Q 8 28, 32 28 Q 56 28, 56 46" stroke="currentColor" stroke-width="2"/>
+              <line x1="14" y1="38" x2="50" y2="38" stroke="currentColor" stroke-width="1"/>
+              <path d="M22 22 Q 20 18, 22 14 Q 24 10, 22 6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M32 22 Q 30 18, 32 14 Q 34 10, 32 6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              <path d="M42 22 Q 40 18, 42 14 Q 44 10, 42 6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h3>Potluck</h3>
+          <p>Sign up below so we don't all show up with potato salad.</p>
+        </article>
+
+        <article class="fun-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <path d="M8 38 L 24 30 L 24 46 L 8 54 Z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="16" cy="42" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M40 30 L 56 38 L 56 54 L 40 46 Z" stroke="currentColor" stroke-width="2"/>
+              <circle cx="48" cy="42" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="28" y="16" width="10" height="8" rx="2" stroke="currentColor" stroke-width="1.5" transform="rotate(20 33 20)"/>
+              <path d="M26 12 Q 32 8, 38 12" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3>Games</h3>
+          <p>Cornhole, ladder ball, sidewalk chalk. Got more ideas? Let us know.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="history" aria-labelledby="history-h">
+      <div class="history-banner">
+        <span class="label">a bit of neighborhood trivia</span>
+      </div>
+      <h2 id="history-h">About <span class="a">Little York</span></h2>
+
+      <p>
+        Long before the loop and the cul-de-sacs, this little corner of Northfield Center was a community in its own right. <strong>George Leach settled in Little York in 1832</strong>, shipping lumber out on the newly-completed Ohio-Erie Canal. The Brandywine Creek — much wider then than it is today — was joined here by Indian Run, draining the land that became Macedonia.
+      </p>
+      <p>
+        New Englanders from Vermont, New Hampshire, and Massachusetts brought their town-meeting traditions west with them. A bridge over the Brandywine. A few homesteads. A cheese factory. A church on the green. That was the whole place.
+      </p>
+
+      <div class="history-coda">
+        We're not building anything that grand. Just continuing a thing that's been going on around here, in one form or another, for almost two hundred years: <strong>neighbors getting together to share a meal and figure out who lives next door.</strong>
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="list-section" id="list" aria-labelledby="list-h">
+      <h2 id="list-h">Who's coming, what they're bringing</h2>
+      <p class="list-intro">Take a peek before you sign up so we don't all bring chips.</p>
+
+      <div class="list-paper">
+        <div class="list-head" aria-hidden="true">
+          <div>Neighbor</div>
+          <div>Bringing</div>
+          <div>Notes</div>
+        </div>
+        <div id="list-rows" aria-live="polite" aria-label="List of neighbors who have RSVPed">
+          <div class="list-empty">Nobody's signed up yet — be the first!</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="signup" id="signup" aria-labelledby="signup-h">
+      <h2 id="signup-h">Sign <span class="accent">up!</span></h2>
+      <p class="signup-intro">Takes about a minute. Promise.</p>
+
+      <div class="signup-form">
+
+        <div class="notice">
+          <strong>Heads up:</strong> Your name, what you're bringing, and your party size show up on the list above. Your email, phone, and address stay with us — just for sending updates.
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="f-name">
+            Your name(s) <span class="req" aria-hidden="true">*</span>
+            <span class="tag">PUBLIC</span>
+          </label>
+          <input type="text" id="f-name" aria-required="true" aria-describedby="f-name-err"
+                 placeholder="e.g., The Brush Family — Drew & Grace" autocomplete="name">
+          <div class="error-message" id="f-name-err" role="alert">Oops — need a name so we know who you are.</div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label" for="f-address">
+              Address on the loop
+              <span class="tag private">PRIVATE</span>
+            </label>
+            <input type="text" id="f-address" placeholder="House number is fine" autocomplete="street-address">
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-headcount">
+              How many of you
+              <span class="tag">PUBLIC</span>
+            </label>
+            <input type="number" id="f-headcount" min="1" max="20" placeholder="Adults + kids">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label" for="f-email">
+              Email
+              <span class="tag private">PRIVATE</span>
+            </label>
+            <input type="email" id="f-email" placeholder="optional — for updates" autocomplete="email">
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-phone">
+              Phone
+              <span class="tag private">PRIVATE</span>
+            </label>
+            <input type="tel" id="f-phone" placeholder="optional" autocomplete="tel">
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>You coming? <span class="tag">PUBLIC</span></legend>
+          <div class="radio-row">
+            <label><input type="radio" name="attending" value="yes" checked> Yep, count us in</label>
+            <label><input type="radio" name="attending" value="maybe"> Maybe — keep me posted</label>
+            <label><input type="radio" name="attending" value="no"> Can't make it</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label class="field-label" for="f-bringing">
+            What I'll bring
+            <span class="tag">PUBLIC</span>
+          </label>
+          <select id="f-bringing">
+            <option value="">— pick a category —</option>
+            <option>Main / Entrée</option>
+            <option>Side Dish</option>
+            <option>Salad</option>
+            <option>Appetizer / Snacks</option>
+            <option>Dessert</option>
+            <option>Bread / Rolls</option>
+            <option>Drinks to share</option>
+            <option>Ice / Cups / Plates / Napkins</option>
+            <option>Surprise us</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="f-dish">
+            What specifically?
+            <span class="tag">PUBLIC</span>
+          </label>
+          <input type="text" id="f-dish" placeholder="e.g., grandma's pasta salad">
+        </div>
+
+        <fieldset>
+          <legend>Anything else you can bring? <span class="tag">PUBLIC</span></legend>
+          <div class="check-row">
+            <label><input type="checkbox" value="grill"> Grill</label>
+            <label><input type="checkbox" value="canopy"> Canopy / Tent</label>
+            <label><input type="checkbox" value="table"> Folding table</label>
+            <label><input type="checkbox" value="chairs"> Extra chairs</label>
+            <label><input type="checkbox" value="cooler"> Cooler / Ice</label>
+            <label><input type="checkbox" value="speaker"> Speaker</label>
+            <label><input type="checkbox" value="cornhole"> Cornhole</label>
+            <label><input type="checkbox" value="kids"> Something for kids</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label class="field-label" for="f-ideas">
+            Ideas, questions, or anything you want to add
+            <span class="tag private">PRIVATE</span>
+          </label>
+          <textarea id="f-ideas" placeholder="A game we should play, a neighbor we should make sure to invite, something we haven't thought of..."></textarea>
+        </div>
+
+        <div class="submit-row">
+          <button type="button" class="cta" onclick="submitRsvp()">Count me in! →</button>
+        </div>
+
+        <div class="confirmation" id="confirmation" role="status" aria-live="polite">
+          <h4>You're on the list!</h4>
+          <p>Thanks. Scroll up to see your name above.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <section class="fb-block" aria-labelledby="fb-h">
+      <h2 id="fb-h">Stay in the loop</h2>
+      <p>Private Facebook group for the neighborhood — for updates, photos after the party, lost dogs, and everything in between.</p>
+      <a href="https://www.facebook.com/groups/REPLACE-WITH-GROUP-URL" class="fb-cta" target="_blank" rel="noopener" aria-label="Join the Little York Neighbors Facebook group (opens in new tab)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Join the FB group
+      </a>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>The Little York Block Party · Saturday, August 1, 2026</p>
+    <p>An annual tradition (we hope) starting this year.</p>
+    <p>Questions? Knock on <strong>7643</strong> or call <a href="tel:+13304283462">(330)&nbsp;428-3462</a>.</p>
+    <p class="signoff">— See you on the block!</p>
+  </footer>
+
+</div>
+
+<script>
+const rsvps = [];
+
+function submitRsvp() {
+  const nameEl = document.getElementById('f-name');
+  const errEl = document.getElementById('f-name-err');
+  const name = nameEl.value.trim();
+  const headcount = document.getElementById('f-headcount').value;
+  const attending = document.querySelector('input[name="attending"]:checked').value;
+  const bringingCat = document.getElementById('f-bringing').value;
+  const dish = document.getElementById('f-dish').value.trim();
+  const contribs = Array.from(document.querySelectorAll('.check-row input:checked')).map(c => c.value);
+
+  if (!name) {
+    nameEl.classList.add('error');
+    nameEl.setAttribute('aria-invalid', 'true');
+    errEl.classList.add('show');
+    nameEl.focus();
+    nameEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  nameEl.classList.remove('error');
+  nameEl.removeAttribute('aria-invalid');
+  errEl.classList.remove('show');
+
+  if (attending === 'no') {
+    showConfirmation("Aw, sorry we'll miss ya. We'll save you a plate in spirit.");
+    resetForm();
+    return;
+  }
+
+  const bringing = dish || bringingCat || 'TBD';
+
+  const noteParts = [];
+  if (headcount) noteParts.push(`party of ${headcount}`);
+  if (contribs.length) {
+    const map = { grill: 'grill', canopy: 'canopy', table: 'table', chairs: 'chairs',
+                  cooler: 'cooler', speaker: 'speaker', cornhole: 'cornhole', kids: "kids' stuff" };
+    noteParts.push('also bringing ' + contribs.map(c => map[c]).join(', '));
+  }
+  if (attending === 'maybe') noteParts.unshift('(tentative)');
+
+  rsvps.push({ name, bringing, note: noteParts.join(' · ') || '—' });
+  renderList();
+  showConfirmation();
+  resetForm();
+}
+
+function renderList() {
+  const c = document.getElementById('list-rows');
+  if (!rsvps.length) {
+    c.innerHTML = '<div class="list-empty">Nobody\'s signed up yet — be the first!</div>';
+    return;
+  }
+  c.innerHTML = rsvps.map(r => `
+    <div class="list-row">
+      <div class="r-name">${escapeHtml(r.name)}</div>
+      <div class="r-bringing">${escapeHtml(r.bringing)}</div>
+      <div class="r-note">${escapeHtml(r.note)}</div>
+    </div>
+  `).join('');
+}
+
+function showConfirmation(custom) {
+  const c = document.getElementById('confirmation');
+  c.querySelector('p').textContent = custom || 'Thanks. Scroll up to see your name above.';
+  c.classList.add('show');
+  setTimeout(() => c.classList.remove('show'), 8000);
+}
+
+function resetForm() {
+  ['f-name','f-address','f-headcount','f-email','f-phone','f-bringing','f-dish','f-ideas'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.querySelector('input[name="attending"][value="yes"]').checked = true;
+  document.querySelectorAll('.check-row input').forEach(c => c.checked = false);
+}
+
+function escapeHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+</script>
+
+</body>
+</html>
