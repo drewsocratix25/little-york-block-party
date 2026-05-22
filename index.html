@@ -1191,17 +1191,38 @@ footer a:hover { color: var(--tomato); }
 </div>
 
 <script>
-const rsvps = [];
+// ===========================================================================
+// Supabase config — anon key is meant to be public; security is enforced by
+// Row Level Security policies (anon can INSERT into rsvps, can SELECT only
+// from the rsvps_public view, can INSERT into meet_the_neighbors)
+// ===========================================================================
+const SUPABASE_URL = 'https://crdxgaqpluvdcropvxrk.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNyZHhnYXFwbHV2ZGNyb3B2eHJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk0NTg0MDUsImV4cCI6MjA5NTAzNDQwNX0.nzBjPEWp1fdb-tFkvh5Z5wjWQtHOOT9g0tQ3KHIviAc';
 
-function submitRsvp() {
+const supabaseHeaders = {
+  'Content-Type': 'application/json',
+  'apikey': SUPABASE_ANON_KEY,
+  'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+  'Prefer': 'return=minimal'
+};
+
+// ===========================================================================
+// Submit an RSVP to Supabase
+// ===========================================================================
+async function submitRsvp() {
+  const btn = document.querySelector('.submit-row .cta');
   const nameEl = document.getElementById('f-name');
   const errEl = document.getElementById('f-name-err');
   const name = nameEl.value.trim();
-  const headcount = document.getElementById('f-headcount').value;
+  const partySize = parseInt(document.getElementById('f-headcount').value, 10) || null;
   const attending = document.querySelector('input[name="attending"]:checked').value;
-  const bringingCat = document.getElementById('f-bringing').value;
-  const dish = document.getElementById('f-dish').value.trim();
-  const contribs = Array.from(document.querySelectorAll('.check-row input:checked')).map(c => c.value);
+  const bringingCat = document.getElementById('f-bringing').value || null;
+  const dish = document.getElementById('f-dish').value.trim() || null;
+  const extras = Array.from(document.querySelectorAll('.check-row input:checked')).map(c => c.value);
+  const streetAddress = document.getElementById('f-address').value.trim() || null;
+  const email = document.getElementById('f-email').value.trim() || null;
+  const phone = document.getElementById('f-phone').value.trim() || null;
+  const ideas = document.getElementById('f-ideas').value.trim() || null;
   const wantsFeature = document.getElementById('f-meet-optin').checked;
 
   if (!name) {
@@ -1216,48 +1237,112 @@ function submitRsvp() {
   nameEl.removeAttribute('aria-invalid');
   errEl.classList.remove('show');
 
-  if (attending === 'no') {
-    showConfirmation("Aw, sorry we'll miss ya. We'll save you a plate in spirit.");
+  const originalLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/rsvps`, {
+      method: 'POST',
+      headers: supabaseHeaders,
+      body: JSON.stringify({
+        name,
+        party_size: partySize,
+        attending,
+        bringing_category: bringingCat,
+        bringing_specific: dish,
+        extras,
+        street_address: streetAddress,
+        email,
+        phone,
+        ideas,
+        wants_feature: wantsFeature
+      })
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Supabase error ${response.status}: ${text.slice(0, 200)}`);
+    }
+
+    // Pull the fresh public list so this submission shows up immediately
+    await loadRsvps();
+
+    if (attending === 'no') {
+      showConfirmation("Aw, sorry we'll miss ya. We'll save you a plate in spirit.");
+    } else if (wantsFeature) {
+      showConfirmation("You're on the list! Redirecting you to the 'Meet the Neighbors' page in a sec...");
+      setTimeout(() => { window.location.href = 'meet-the-neighbors.html'; }, 2200);
+    } else {
+      showConfirmation();
+    }
     resetForm();
-    return;
+
+  } catch (err) {
+    console.error('RSVP submission failed:', err);
+    showConfirmation("Something went wrong saving your RSVP. Try again, or knock on 7643 Kitner.");
+  } finally {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
   }
-
-  const bringing = dish || bringingCat || 'TBD';
-
-  const noteParts = [];
-  if (headcount) noteParts.push(`party of ${headcount}`);
-  if (contribs.length) {
-    const map = { grill: 'grill', canopy: 'canopy', table: 'table', chairs: 'chairs',
-                  cooler: 'cooler', speaker: 'speaker', cornhole: 'cornhole', kids: "kids' stuff" };
-    noteParts.push('also bringing ' + contribs.map(c => map[c]).join(', '));
-  }
-  if (attending === 'maybe') noteParts.unshift('(tentative)');
-
-  rsvps.push({ name, bringing, note: noteParts.join(' · ') || '—' });
-  renderList();
-
-  if (wantsFeature) {
-    showConfirmation("You're on the list! Redirecting you to the 'Meet the Neighbors' page in a sec...");
-    setTimeout(() => { window.location.href = 'meet-the-neighbors.html'; }, 2200);
-  } else {
-    showConfirmation();
-  }
-  resetForm();
 }
 
-function renderList() {
+// ===========================================================================
+// Load the public RSVP list from Supabase
+// ===========================================================================
+async function loadRsvps() {
+  try {
+    const response = await fetch(
+      `${SUPABASE_URL}/rest/v1/rsvps_public?select=*&order=created_at.asc`,
+      {
+        method: 'GET',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Supabase read error ${response.status}`);
+    }
+
+    const rows = await response.json();
+    renderList(rows);
+  } catch (err) {
+    console.error('Failed to load RSVPs:', err);
+    // Don't crash the page — just show the empty state
+    renderList([]);
+  }
+}
+
+function renderList(rows) {
   const c = document.getElementById('list-rows');
-  if (!rsvps.length) {
+  if (!rows || rows.length === 0) {
     c.innerHTML = '<div class="list-empty">Nobody\'s signed up yet — be the first!</div>';
     return;
   }
-  c.innerHTML = rsvps.map(r => `
-    <div class="list-row">
-      <div class="r-name">${escapeHtml(r.name)}</div>
-      <div class="r-bringing">${escapeHtml(r.bringing)}</div>
-      <div class="r-note">${escapeHtml(r.note)}</div>
-    </div>
-  `).join('');
+  const extrasMap = {
+    grill: 'grill', canopy: 'canopy', table: 'folding table', chairs: 'chairs',
+    cooler: 'cooler', speaker: 'speaker', cornhole: 'cornhole', kids: "kids' stuff"
+  };
+  c.innerHTML = rows.map(r => {
+    const bringing = r.bringing_specific || r.bringing_category || 'TBD';
+    const noteParts = [];
+    if (r.party_size) noteParts.push(`party of ${r.party_size}`);
+    if (r.extras && r.extras.length) {
+      noteParts.push('also bringing ' + r.extras.map(e => extrasMap[e] || e).join(', '));
+    }
+    if (r.attending === 'maybe') noteParts.unshift('(tentative)');
+    const note = noteParts.join(' · ') || '—';
+    return `
+      <div class="list-row">
+        <div class="r-name">${escapeHtml(r.name)}</div>
+        <div class="r-bringing">${escapeHtml(bringing)}</div>
+        <div class="r-note">${escapeHtml(note)}</div>
+      </div>
+    `;
+  }).join('');
 }
 
 function showConfirmation(custom) {
@@ -1277,10 +1362,14 @@ function resetForm() {
 }
 
 function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
   const d = document.createElement('div');
-  d.textContent = str;
+  d.textContent = String(str);
   return d.innerHTML;
 }
+
+// Load existing RSVPs on page load
+document.addEventListener('DOMContentLoaded', loadRsvps);
 </script>
 
 </body>
