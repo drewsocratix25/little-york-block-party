@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>The Little York Block Party — Saturday, August 1, 2026</title>
-<meta name="description" content="First annual block party for the Little York loop in Northfield, Ohio. Saturday August 1, 2026. RSVP and sign up to bring something.">
+<title>The Kitner, Shady &amp; Oviatt Block Party — Saturday, August 1, 2026</title>
+<meta name="description" content="First annual block party for our three-street neighborhood off Olde Eight in Northfield, Ohio. Saturday August 1, 2026. RSVP and sign up to bring something.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Patrick+Hand&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
@@ -118,6 +118,26 @@ select:focus-visible, textarea:focus-visible {
   letter-spacing: -1px;
   margin: 4px 0 12px;
   text-shadow: 2px 2px 0 rgba(217, 68, 39, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero h1 .streets {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: clamp(20px, 3.5vw, 32px);
+  letter-spacing: 4px;
+  color: var(--tomato);
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  transform: rotate(-1deg);
+  padding: 6px 18px;
+  border-top: 2px solid var(--tomato);
+  border-bottom: 2px solid var(--tomato);
 }
 
 .hero h1 .accent {
@@ -765,12 +785,12 @@ footer a:hover { color: var(--tomato); }
     <p class="hero-tag">— hey neighbor —</p>
 
     <h1>
-      <span class="accent">Little York</span><br>
+      <span class="streets">Kitner · Shady · Oviatt</span>
       Block Party!
     </h1>
 
     <p class="hero-subtitle">
-      Pull up a chair. Bring something to share. Meet the folks down the street.
+      Pull up a chair. Bring something to share. Meet the folks on the three streets.
     </p>
 
     <div class="hero-date-strip">
@@ -886,7 +906,7 @@ footer a:hover { color: var(--tomato); }
         We're closing the street.<br>
         <span class="ink-red">You're invited.</span>
       </h2>
-      <p>First-ever Little York block party — happening right here on our loop off Olde Eight.</p>
+      <p>First-ever block party for the three streets that make up our neighborhood off Olde Eight — Kitner, Shady, and Oviatt.</p>
       <p><strong>BYOB. Potluck-style. Kids welcome.</strong> No fees, no formalities. Just neighbors, food, and an afternoon together.</p>
 
       <div class="cta-row">
@@ -968,13 +988,13 @@ footer a:hover { color: var(--tomato); }
       <div class="history-banner">
         <span class="label">a bit of neighborhood trivia</span>
       </div>
-      <h2 id="history-h">About <span class="a">Little York</span></h2>
+      <h2 id="history-h">About <span class="a">our corner</span> of Northfield</h2>
 
       <p>
-        Long before the loop and the cul-de-sacs, this little corner of Northfield Center was a community in its own right. <strong>George Leach settled in Little York in 1832</strong>, shipping lumber out on the newly-completed Ohio-Erie Canal. The Brandywine Creek — much wider then than it is today — was joined here by Indian Run, draining the land that became Macedonia.
+        Our three streets are a midcentury slice of a much older story. Long before Kitner, Shady, and Oviatt were platted in the late 1950s, this corner of Northfield Center was already a community — <strong>George Leach settled nearby in Little York in 1832</strong>, shipping lumber out on the newly-completed Ohio-Erie Canal. The Brandywine Creek — much wider then than it is today — was joined here by Indian Run, draining the land that became Macedonia.
       </p>
       <p>
-        New Englanders from Vermont, New Hampshire, and Massachusetts brought their town-meeting traditions west with them. A bridge over the Brandywine. A few homesteads. A cheese factory. A church on the green. That was the whole place.
+        New Englanders from Vermont, New Hampshire, and Massachusetts brought their town-meeting traditions west with them. A bridge over the Brandywine. A few homesteads. A cheese factory. A church on the green. Now there's us — three quiet streets off Olde Eight.
       </p>
 
       <div class="history-coda">
@@ -1033,10 +1053,10 @@ footer a:hover { color: var(--tomato); }
         <div class="field-row">
           <div class="field">
             <label class="field-label" for="f-address">
-              Address on the loop
+              Your street &amp; house number
               <span class="tag private">PRIVATE</span>
             </label>
-            <input type="text" id="f-address" placeholder="House number is fine" autocomplete="street-address">
+            <input type="text" id="f-address" placeholder="e.g., 7643 Kitner" autocomplete="street-address">
           </div>
           <div class="field">
             <label class="field-label" for="f-headcount">
@@ -1127,7 +1147,7 @@ footer a:hover { color: var(--tomato); }
             <input type="checkbox" id="f-meet-optin">
             <span>
               <strong>Want to be featured before the party?</strong><br>
-              We'd love to introduce you to the rest of the loop on our Facebook group — a quick "meet the neighbors" post with a photo and a little about you. Check this box and we'll send you a short questionnaire (takes 5 mins, you can skip any question you want).
+              We'd love to introduce you to the rest of the neighborhood on our Facebook group — a quick "meet the neighbors" post with a photo and a little about you. Check this box and we'll send you a short questionnaire (takes 5 mins, you can skip any question you want).
             </span>
           </label>
         </div>
@@ -1153,7 +1173,7 @@ footer a:hover { color: var(--tomato); }
     <section class="fb-block" aria-labelledby="fb-h">
       <h2 id="fb-h">Stay in the loop</h2>
       <p>Private Facebook group for the neighborhood — for updates, photos after the party, lost dogs, and everything in between.</p>
-      <a href="https://www.facebook.com/groups/REPLACE-WITH-GROUP-URL" class="fb-cta" target="_blank" rel="noopener" aria-label="Join the Little York Neighbors Facebook group (opens in new tab)">
+      <a href="https://www.facebook.com/groups/REPLACE-WITH-GROUP-URL" class="fb-cta" target="_blank" rel="noopener" aria-label="Join the Kitner, Shady &amp; Oviatt neighbors Facebook group (opens in new tab)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Join the FB group
       </a>
@@ -1162,10 +1182,10 @@ footer a:hover { color: var(--tomato); }
   </main>
 
   <footer role="contentinfo">
-    <p>The Little York Block Party · Saturday, August 1, 2026</p>
+    <p>The Kitner, Shady &amp; Oviatt Block Party · Saturday, August 1, 2026</p>
     <p>An annual tradition (we hope) starting this year.</p>
-    <p>Questions? Knock on <strong>7643</strong> or call <a href="tel:+13304283462">(330)&nbsp;428-3462</a>.</p>
-    <p class="signoff">— See you on the block!</p>
+    <p>Questions? Knock on <strong>7643 Kitner</strong> or call <a href="tel:+13304283462">(330)&nbsp;428-3462</a>.</p>
+    <p class="signoff">— See you in the neighborhood!</p>
   </footer>
 
 </div>
