@@ -427,6 +427,248 @@ select:focus-visible, textarea:focus-visible {
   font-weight: 600;
 }
 
+/* ════════════════ HELP FUND THE EXTRAS (tiered) ════════════════ */
+.fund-section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.fund-section h2 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: clamp(36px, 5vw, 48px);
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.fund-section h2 .accent {
+  color: var(--tomato);
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+.fund-intro {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 620px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+.fund-intro strong {
+  color: var(--tomato-deep);
+  font-weight: 600;
+}
+
+.fund-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.fund-tier {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  padding: 22px 22px 22px 18px;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+}
+
+.fund-tier--unlocked {
+  box-shadow: 5px 5px 0 var(--tomato);
+  transform: rotate(-0.3deg);
+}
+.fund-tier--unlocking {
+  box-shadow: 5px 5px 0 var(--sunny);
+  transform: rotate(0.2deg);
+}
+.fund-tier--stretch {
+  box-shadow: 5px 5px 0 var(--grass);
+  transform: rotate(-0.2deg);
+}
+
+.fund-tier-rank {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ink);
+  flex-shrink: 0;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px dashed var(--ink);
+  padding-right: 18px;
+}
+.fund-tier-rank sup {
+  font-size: 22px;
+  margin-left: -2px;
+}
+
+.fund-tier-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.fund-tier-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.fund-tier-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.fund-tier-body h3 {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.fund-tier-priority {
+  display: inline-block;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 4px 10px;
+  margin-left: auto;
+  transform: rotate(-1deg);
+}
+.fund-tier--unlocked .fund-tier-priority { background: var(--tomato); }
+.fund-tier--unlocking .fund-tier-priority { background: var(--ink); color: var(--sunny); }
+.fund-tier--stretch .fund-tier-priority { background: var(--grass); }
+
+.fund-tier-desc {
+  font-family: 'Fraunces', serif;
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.fund-tier-goal {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--cream-deep);
+  border: 1.5px solid var(--ink);
+}
+.fund-tier-label {
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.fund-tier-amount {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 26px;
+  color: var(--tomato-deep);
+  line-height: 1;
+}
+
+@media (max-width: 540px) {
+  .fund-tier {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 18px;
+  }
+  .fund-tier-rank {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px dashed var(--ink);
+    padding-right: 0;
+    padding-bottom: 10px;
+    font-size: 48px;
+    justify-content: flex-start;
+  }
+  .fund-tier-priority {
+    margin-left: 0;
+  }
+}
+
+.fund-cta {
+  margin: 26px 0 20px;
+  padding: 26px 24px;
+  background: var(--cream-deep);
+  border: 3px dashed var(--ink);
+  text-align: center;
+}
+
+.fund-cta .cta-button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--tomato);
+  color: var(--cream);
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transform: rotate(-1deg);
+}
+.fund-cta .cta-button:hover {
+  transform: rotate(-1deg) translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+.fund-cta .cta-button:active {
+  transform: rotate(-1deg) translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.fund-cta-sub {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.fund-sponsor {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--sunny);
+  text-align: left;
+}
+.fund-sponsor p {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+.fund-sponsor strong {
+  color: var(--tomato-deep);
+  font-weight: 600;
+}
+.fund-sponsor a {
+  color: var(--tomato-deep);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--tomato);
+}
+
 .list-section {
   max-width: 780px;
   margin: 0 auto;
@@ -800,7 +1042,7 @@ footer a:hover { color: var(--tomato); }
 }
 
 .hero, .illustration, .invite, .whats-up,
-.history, .map-section, .list-section, .signup, .fb-block {
+.history, .map-section, .fund-section, .list-section, .signup, .fb-block {
   animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 .illustration { animation-delay: 0.1s; }
@@ -808,7 +1050,8 @@ footer a:hover { color: var(--tomato); }
 .whats-up { animation-delay: 0.3s; }
 .history { animation-delay: 0.4s; }
 .map-section { animation-delay: 0.45s; }
-.list-section { animation-delay: 0.5s; }
+.fund-section { animation-delay: 0.5s; }
+.list-section { animation-delay: 0.55s; }
 .signup { animation-delay: 0.6s; }
 .fb-block { animation-delay: 0.7s; }
 
@@ -1028,8 +1271,8 @@ footer a:hover { color: var(--tomato); }
               <path d="M42 22 Q 40 18, 42 14 Q 44 10, 42 6" stroke="currentColor" stroke-width="1.5" fill="none"/>
             </svg>
           </div>
-          <h3>Potluck</h3>
-          <p>Sign up below so we don't all show up with potato salad.</p>
+          <h3>Potluck + Grills</h3>
+          <p>Bring a dish and a pack of burgers or dogs to share. Grills going.</p>
         </article>
 
         <article class="fun-card">
@@ -1205,6 +1448,85 @@ footer a:hover { color: var(--tomato); }
       <p class="map-note">
         <strong>We've coordinated with Northfield Center Township</strong> to close this stretch of the loop for the afternoon. One lane stays clear so emergency vehicles can pass through and hydrants stay accessible — tables and chairs go on one side only.
       </p>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- ════════════════ HELP FUND THE EXTRAS ════════════════ -->
+    <section class="fund-section" aria-labelledby="fund-h">
+      <h2 id="fund-h">Help fund <span class="accent">the extras</span></h2>
+      <p class="fund-intro">
+        The party itself is potluck — bring a dish, bring a pack of burgers or hotdogs to share, we'll have grills going. But there's a couple of extras that'd make the day a lot better and cost actual money. <strong>We're funding them in order.</strong> Porta potty first (non-negotiable). Then the kegs. Whatever's left over, we get bigger and better.
+      </p>
+
+      <div class="fund-tiers">
+
+        <div class="fund-tier fund-tier--unlocked">
+          <div class="fund-tier-rank" aria-hidden="true">1<sup>st</sup></div>
+          <div class="fund-tier-body">
+            <div class="fund-tier-header">
+              <span class="fund-tier-icon" aria-hidden="true">🚽</span>
+              <h3>Porta potty</h3>
+              <span class="fund-tier-priority">MUST&nbsp;HAVE</span>
+            </div>
+            <p class="fund-tier-desc">Handicap-accessible unit with sanitizer for the afternoon — $225 + tax + $100 delivery. This is happening either way — your contribution just decides whether we float it or the neighborhood does.</p>
+            <div class="fund-tier-goal">
+              <span class="fund-tier-label">goal</span>
+              <span class="fund-tier-amount">$350</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fund-tier fund-tier--unlocking">
+          <div class="fund-tier-rank" aria-hidden="true">2<sup>nd</sup></div>
+          <div class="fund-tier-body">
+            <div class="fund-tier-header">
+              <span class="fund-tier-icon" aria-hidden="true">🍺</span>
+              <h3>The first keg</h3>
+              <span class="fund-tier-priority">UNLOCKS&nbsp;NEXT</span>
+            </div>
+            <p class="fund-tier-desc">One domestic half-barrel from Heidelberg + cups + tap rental. Once the porta is paid for, every additional dollar goes here.</p>
+            <div class="fund-tier-goal">
+              <span class="fund-tier-label">goal</span>
+              <span class="fund-tier-amount">+$250</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fund-tier fund-tier--stretch">
+          <div class="fund-tier-rank" aria-hidden="true">3<sup>rd</sup></div>
+          <div class="fund-tier-body">
+            <div class="fund-tier-header">
+              <span class="fund-tier-icon" aria-hidden="true">🎉</span>
+              <h3>More &amp; better</h3>
+              <span class="fund-tier-priority">STRETCH</span>
+            </div>
+            <p class="fund-tier-desc">Knowing our neighborhood, one keg is gonna go fast. Anything beyond the first two tiers buys a second keg (maybe a craft one), better cups, ice, you name it.</p>
+            <div class="fund-tier-goal">
+              <span class="fund-tier-label">goal</span>
+              <span class="fund-tier-amount">+$300&nbsp;&amp;&nbsp;up</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="fund-cta">
+        <a href="REPLACE-WITH-GOFUNDME-URL" class="cta-button" target="_blank" rel="noopener">
+          Chip in on GoFundMe →
+        </a>
+        <p class="fund-cta-sub">One fund, three tiers. Goes through GoFundMe so your card info doesn't sit on our laptop. Progress + who's contributed shows up live on the GoFundMe page.</p>
+      </div>
+
+      <div class="fund-sponsor">
+        <p>
+          <strong>Are you a local business?</strong> If you'd like to sponsor a piece of this in exchange for a shout-out at the party and on our Facebook group, knock on <strong>7643 Kitner</strong> or call <a href="tel:+13304283462">(330)&nbsp;428-3462</a>.
+        </p>
+      </div>
     </section>
 
     <div class="squiggle" aria-hidden="true">
