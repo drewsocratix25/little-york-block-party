@@ -31,6 +31,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Offset for sticky nav so anchors don't land under it */
+[id], section[aria-labelledby] {
+  scroll-margin-top: 72px;
+}
+@media (max-width: 700px) {
+  [id], section[aria-labelledby] {
+    scroll-margin-top: 60px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -69,6 +79,126 @@ body {
   left: 12px; top: 12px;
   outline: 3px solid var(--tomato);
   outline-offset: 2px;
+}
+
+/* ════════════════ TOP NAV ════════════════ */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--cream);
+  border-bottom: 2px solid var(--ink);
+  box-shadow: 0 3px 0 rgba(217, 68, 39, 0.18);
+  /* Layer the noise texture so it doesn't show through */
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch' seed='5'/><feColorMatrix values='0 0 0 0 0.12  0 0 0 0 0.09  0 0 0 0 0.07  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.topnav-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topnav-brand {
+  font-family: 'Caveat Brush', cursive;
+  font-size: 24px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  line-height: 1;
+}
+.topnav-brand .dot { color: var(--tomato); }
+.topnav-brand:hover { color: var(--tomato); }
+
+.topnav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav-links a {
+  display: inline-block;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 12px;
+  letter-spacing: 0.5px;
+  border-radius: 0;
+  transition: color 0.12s ease, transform 0.12s ease;
+}
+
+.topnav-links a:hover {
+  color: var(--tomato);
+  transform: translateY(-1px);
+}
+
+.topnav-links a.topnav-cta {
+  background: var(--tomato);
+  color: var(--cream);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 6px 14px;
+  margin-left: 8px;
+  transform: rotate(-1deg);
+  font-weight: bold;
+}
+.topnav-links a.topnav-cta:hover {
+  color: var(--cream);
+  background: var(--tomato-deep);
+  transform: rotate(-1deg) translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Tablet */
+@media (max-width: 820px) {
+  .topnav-inner {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+  .topnav-brand {
+    font-size: 20px;
+  }
+  .topnav-links a {
+    font-size: 14px;
+    padding: 6px 8px;
+    letter-spacing: 0;
+  }
+  .topnav-links a.topnav-cta {
+    padding: 5px 11px;
+    margin-left: 4px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 580px) {
+  .topnav-brand {
+    display: none;
+  }
+  .topnav-inner {
+    justify-content: center;
+    padding: 8px 6px;
+  }
+  .topnav-links {
+    gap: 0;
+  }
+  .topnav-links a {
+    font-size: 13px;
+    padding: 5px 7px;
+  }
+  .topnav-links a.topnav-cta {
+    padding: 4px 10px;
+    margin-left: 2px;
+  }
 }
 
 a:focus-visible, button:focus-visible, input:focus-visible,
@@ -1240,7 +1370,20 @@ footer a:hover { color: var(--tomato); }
 
 <a href="#main" class="skip-link">Skip to content</a>
 
-<div class="page">
+<nav class="topnav" aria-label="Main navigation">
+  <div class="topnav-inner">
+    <a href="#top" class="topnav-brand">K<span class="dot">·</span>S<span class="dot">·</span>O Block Party</a>
+    <ul class="topnav-links">
+      <li><a href="#fund-h">Chip in</a></li>
+      <li><a href="#map-h">Map</a></li>
+      <li><a href="#list">Guests</a></li>
+      <li><a href="meet-the-neighbors.html">Meet</a></li>
+      <li><a href="#signup" class="topnav-cta">RSVP →</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page" id="top">
 
   <header class="hero">
 
@@ -1710,7 +1853,7 @@ footer a:hover { color: var(--tomato); }
       </div>
 
       <div class="fund-cta">
-        <a href="https://gofund.me/2f693d9e7" class="cta-button" target="_blank" rel="noopener">
+        <a href="https://www.gofundme.com/f/help-make-our-block-party-unforgettable" class="cta-button" target="_blank" rel="noopener">
           Chip in on GoFundMe →
         </a>
         <p class="fund-cta-sub">One fund, three tiers. <strong>Deadline to chip in: July 12</strong>, same as the RSVP deadline. Goes through GoFundMe so your card info doesn't sit on our laptop. If tier 1 doesn't fund by July 12, every contribution gets refunded through GoFundMe.</p>
