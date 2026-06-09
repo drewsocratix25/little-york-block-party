@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>The Kitner, Shady &amp; Oviatt Block Party — Saturday, August 1, 2026</title>
+<title>The Kitner, Shady &amp; Oviatt Block Party · Saturday, August 1, 2026</title>
 <meta name="description" content="Block party for our three-street neighborhood off Olde Eight in Northfield, Ohio. Saturday August 1, 2026. RSVP and sign up to bring something.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -425,6 +425,79 @@ select:focus-visible, textarea:focus-visible {
 .map-note strong {
   color: var(--tomato-deep);
   font-weight: 600;
+}
+
+/* ════════════════ THANKS HUNTER ════════════════ */
+.thanks-hunter {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.thanks-card {
+  position: relative;
+  background: var(--cream);
+  border: 3px solid var(--ink);
+  padding: 28px 32px 26px;
+  box-shadow: 7px 7px 0 var(--sunny);
+  transform: rotate(-0.7deg);
+}
+
+.thanks-stars {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  padding: 0 14px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: var(--tomato);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.thanks-card h2 {
+  font-family: 'Caveat Brush', cursive;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+.thanks-card h2 .name {
+  color: var(--tomato);
+  display: inline-block;
+  transform: rotate(-2deg);
+  text-shadow: 3px 3px 0 rgba(232, 177, 58, 0.4);
+}
+
+.thanks-card p {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink);
+  text-align: center;
+  margin: 0;
+}
+.thanks-card p strong {
+  color: var(--tomato-deep);
+  font-weight: 600;
+}
+
+.thanks-handoff {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 16px;
+  color: var(--ink);
+  background: var(--cream-deep);
+  padding: 6px 16px;
+  border: 1.5px dashed var(--ink);
+  transform: rotate(0.5deg);
 }
 
 /* ════════════════ HELP FUND THE EXTRAS (tiered) ════════════════ */
@@ -1041,13 +1114,14 @@ footer a:hover { color: var(--tomato); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.hero, .illustration, .invite, .whats-up,
+.hero, .illustration, .invite, .whats-up, .thanks-hunter,
 .history, .map-section, .fund-section, .list-section, .signup, .fb-block {
   animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
 }
 .illustration { animation-delay: 0.1s; }
 .invite { animation-delay: 0.2s; }
 .whats-up { animation-delay: 0.3s; }
+.thanks-hunter { animation-delay: 0.35s; }
 .history { animation-delay: 0.4s; }
 .map-section { animation-delay: 0.45s; }
 .fund-section { animation-delay: 0.5s; }
@@ -1096,7 +1170,7 @@ footer a:hover { color: var(--tomato); }
       </svg>
     </div>
 
-    <p class="hero-tag">— hey neighbor —</p>
+    <p class="hero-tag">· hey neighbor ·</p>
 
     <h1>
       <span class="streets">Kitner · Shady · Oviatt</span>
@@ -1221,7 +1295,7 @@ footer a:hover { color: var(--tomato); }
         We're closing the street.<br>
         <span class="ink-red">You're invited.</span>
       </h2>
-      <p>A block party for the three streets that make up our neighborhood off Olde Eight — Kitner, Shady, and Oviatt.</p>
+      <p>A block party for the three streets that make up our neighborhood off Olde Eight: Kitner, Shady, and Oviatt.</p>
       <p><strong>BYOB. Potluck-style. Kids welcome.</strong> No fees, no formalities. Just neighbors, food, and an afternoon together.</p>
 
       <div class="cta-row">
@@ -1299,6 +1373,26 @@ footer a:hover { color: var(--tomato); }
       </svg>
     </div>
 
+    <!-- ════════════════ THANKS HUNTER ════════════════ -->
+    <section class="thanks-hunter" aria-label="A thank you to Hunter">
+      <div class="thanks-card">
+        <div class="thanks-stars">★ ★ ★</div>
+        <h2>Big thanks to <span class="name">Hunter</span></h2>
+        <p>
+          Who's been more fired up about this block party than anyone on the loop, and personally walked door to door delivering every single flyer. <strong>If a flyer brought you here, that was him.</strong> He can't make the party himself, sadly, but he played a huge role getting us here.
+        </p>
+        <p style="text-align:center;">
+          <span class="thanks-handoff">Catch him biking or scootering by? Give him a huge thanks 👋</span>
+        </p>
+      </div>
+    </section>
+
+    <div class="squiggle" aria-hidden="true">
+      <svg viewBox="0 0 320 24">
+        <path d="M0 12 Q 20 2, 40 12 T 80 12 T 120 12 T 160 12 T 200 12 T 240 12 T 280 12 T 320 12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
     <section class="history" aria-labelledby="history-h">
       <div class="history-banner">
         <span class="label">a bit of neighborhood trivia</span>
@@ -1306,10 +1400,10 @@ footer a:hover { color: var(--tomato); }
       <h2 id="history-h">About <span class="a">our corner</span> of Northfield</h2>
 
       <p>
-        Our three streets are a midcentury slice of a much older story. Long before Kitner, Shady, and Oviatt were platted in the late 1950s, this corner of Northfield Center was already a community — <strong>George Leach settled nearby in Little York in 1832</strong>, shipping lumber out on the newly-completed Ohio-Erie Canal. The Brandywine Creek — much wider then than it is today — was joined here by Indian Run, draining the land that became Macedonia.
+        Our three streets are a midcentury slice of a much older story. Long before Kitner, Shady, and Oviatt were platted in the late 1950s, this corner of Northfield Center was already a community. <strong>George Leach settled nearby in Little York in 1832</strong>, shipping lumber out on the newly-completed Ohio-Erie Canal. The Brandywine Creek, much wider then than it is today, was joined here by Indian Run, draining the land that became Macedonia.
       </p>
       <p>
-        New Englanders from Vermont, New Hampshire, and Massachusetts brought their town-meeting traditions west with them. A bridge over the Brandywine. A few homesteads. A cheese factory. A church on the green. Now there's us — three quiet streets off Olde Eight.
+        New Englanders from Vermont, New Hampshire, and Massachusetts brought their town-meeting traditions west with them. A bridge over the Brandywine. A few homesteads. A cheese factory. A church on the green. Now there's us. Three quiet streets off Olde Eight.
       </p>
 
       <div class="history-coda">
@@ -1338,7 +1432,7 @@ footer a:hover { color: var(--tomato); }
           <!-- Shady Ln: vertical line on left side of the loop -->
           <line x1="200" y1="80" x2="200" y2="540" stroke="#1f1812" stroke-width="4"/>
 
-          <!-- Top curve: Shady to Kitner — goes up from Shady, curves right, comes down to Kitner -->
+          <!-- Top curve: Shady to Kitner, goes up from Shady, curves right, comes down to Kitner -->
           <path d="M 200 80 Q 200 50 240 45 L 360 45 Q 420 50 420 100"
                 stroke="#1f1812" stroke-width="4" fill="none"/>
 
@@ -1358,12 +1452,12 @@ footer a:hover { color: var(--tomato); }
 
           <!-- ============ STREET LABELS (parallel to roads, like a real map) ============ -->
 
-          <!-- Shady Ln label — vertical, ALONGSIDE the Shady road on its LEFT side -->
+          <!-- Shady Ln label: vertical, ALONGSIDE the Shady road on its LEFT side -->
           <text x="184" y="310" font-family="Patrick Hand, sans-serif" font-size="20"
                 fill="#1f1812" font-weight="bold"
                 transform="rotate(-90 184 310)" text-anchor="middle">Shady Ln</text>
 
-          <!-- Kitner Blvd label — follows the top curve of the road, but mostly straight -->
+          <!-- Kitner Blvd label: follows the top curve of the road, but mostly straight -->
           <defs>
             <path id="kitnerTopCurve" d="M 220 30 L 400 30" fill="none"/>
           </defs>
@@ -1446,7 +1540,7 @@ footer a:hover { color: var(--tomato); }
       </div>
 
       <p class="map-note">
-        <strong>We've coordinated with Northfield Center Township</strong> to close this stretch of the loop for the afternoon. One lane stays clear so emergency vehicles can pass through and hydrants stay accessible — tables and chairs go on one side only.
+        <strong>We've coordinated with Northfield Center Township</strong> to close this stretch of the loop for the afternoon. One lane stays clear so emergency vehicles can pass through and hydrants stay accessible. Tables and chairs go on one side only.
       </p>
     </section>
 
@@ -1460,7 +1554,7 @@ footer a:hover { color: var(--tomato); }
     <section class="fund-section" aria-labelledby="fund-h">
       <h2 id="fund-h">Help fund <span class="accent">the extras</span></h2>
       <p class="fund-intro">
-        The party itself is potluck — bring a dish, bring a pack of burgers or hotdogs to share, we'll have grills going. But there's a couple of extras that'd make the day a lot better and cost actual money. <strong>We're funding them in order, and tier&nbsp;1 has to hit for the party to happen.</strong> Porta potty first. Then the kegs. Every dollar past that goes into making the party better — and we'll post the final total and where it all went after.
+        The party itself is potluck. Bring a dish, bring a pack of burgers or hotdogs to share, we'll have grills going. But there's a couple of extras that'd make the day a lot better and cost actual money. <strong>We're funding them in order, and tier&nbsp;1 has to hit for the party to happen.</strong> Porta potty first. Then the kegs. Every dollar past that goes into making the party better. We'll post the final total and where it all went after.
       </p>
 
       <div class="fund-tiers">
@@ -1473,7 +1567,7 @@ footer a:hover { color: var(--tomato); }
               <h3>Porta potty</h3>
               <span class="fund-tier-priority">MUST&nbsp;HAVE</span>
             </div>
-            <p class="fund-tier-desc">Handicap-accessible unit with sanitizer for the afternoon — $225 + tax + $100 delivery. <strong>Strongly recommended by neighbors who've thrown these before</strong> — so nobody needs to ask to use someone's bathroom. <strong>If we don't hit this goal, the party doesn't happen as planned and every contribution gets refunded.</strong></p>
+            <p class="fund-tier-desc">Handicap-accessible unit with sanitizer for the afternoon. $225 + tax + $100 delivery. <strong>Strongly recommended by neighbors who've thrown these before</strong>, so nobody needs to ask to use someone's bathroom. <strong>If we don't hit this goal, the party doesn't happen as planned and every contribution gets refunded.</strong></p>
             <div class="fund-tier-goal">
               <span class="fund-tier-label">goal</span>
               <span class="fund-tier-amount">$350</span>
@@ -1505,7 +1599,7 @@ footer a:hover { color: var(--tomato); }
               <h3>Make it even better</h3>
               <span class="fund-tier-priority">STRETCH</span>
             </div>
-            <p class="fund-tier-desc">Anything beyond the first two tiers goes into making the day better — more dogs and burgers for the grills, a third keg (maybe a craft one), condiments, better cups, kids' drinks, you name it. <strong>Every penny gets spent on the party.</strong> We'll post the final total and where it went on the FB group after.</p>
+            <p class="fund-tier-desc">Anything beyond the first two tiers goes into making the day better: more dogs and burgers for the grills, a third keg (maybe a craft one), condiments, better cups, kids' drinks, you name it. <strong>Every penny gets spent on the party.</strong> We'll post the final total and where it went on the FB group after.</p>
             <div class="fund-tier-goal">
               <span class="fund-tier-label">goal</span>
               <span class="fund-tier-amount">+&nbsp;every&nbsp;dollar</span>
@@ -1516,10 +1610,10 @@ footer a:hover { color: var(--tomato); }
       </div>
 
       <div class="fund-cta">
-        <a href="REPLACE-WITH-GOFUNDME-URL" class="cta-button" target="_blank" rel="noopener">
+        <a href="https://gofund.me/2f693d9e7" class="cta-button" target="_blank" rel="noopener">
           Chip in on GoFundMe →
         </a>
-        <p class="fund-cta-sub">One fund, three tiers. <strong>Deadline to chip in: July 12</strong> — same as the RSVP deadline. Goes through GoFundMe so your card info doesn't sit on our laptop. If tier 1 doesn't fund by July 12, every contribution gets refunded through GoFundMe.</p>
+        <p class="fund-cta-sub">One fund, three tiers. <strong>Deadline to chip in: July 12</strong>, same as the RSVP deadline. Goes through GoFundMe so your card info doesn't sit on our laptop. If tier 1 doesn't fund by July 12, every contribution gets refunded through GoFundMe.</p>
       </div>
 
       <div class="fund-sponsor">
@@ -1546,7 +1640,7 @@ footer a:hover { color: var(--tomato); }
           <div>Notes</div>
         </div>
         <div id="list-rows" aria-live="polite" aria-label="List of neighbors who have RSVPed">
-          <div class="list-empty">Nobody's signed up yet — be the first!</div>
+          <div class="list-empty">Nobody's signed up yet. Be the first!</div>
         </div>
       </div>
     </section>
@@ -1564,7 +1658,7 @@ footer a:hover { color: var(--tomato); }
       <div class="signup-form">
 
         <div class="notice">
-          <strong>Heads up:</strong> Your name, what you're bringing, and your party size show up on the list above. Your email, phone, and address stay with us — just for sending updates.
+          <strong>Heads up:</strong> Your name, what you're bringing, and your party size show up on the list above. Your email, phone, and address stay with us, just for sending updates.
         </div>
 
         <div class="field">
@@ -1573,8 +1667,8 @@ footer a:hover { color: var(--tomato); }
             <span class="tag">PUBLIC</span>
           </label>
           <input type="text" id="f-name" aria-required="true" aria-describedby="f-name-err"
-                 placeholder="e.g., The Brush Family — Drew & Grace" autocomplete="name">
-          <div class="error-message" id="f-name-err" role="alert">Oops — need a name so we know who you are.</div>
+                 placeholder="e.g., The Brush Family · Drew & Grace" autocomplete="name">
+          <div class="error-message" id="f-name-err" role="alert">Oops, need a name so we know who you are.</div>
         </div>
 
         <div class="field-row">
@@ -1600,7 +1694,7 @@ footer a:hover { color: var(--tomato); }
               Email
               <span class="tag private">PRIVATE</span>
             </label>
-            <input type="email" id="f-email" placeholder="optional — for updates" autocomplete="email">
+            <input type="email" id="f-email" placeholder="optional, for updates" autocomplete="email">
           </div>
           <div class="field">
             <label class="field-label" for="f-phone">
@@ -1615,7 +1709,7 @@ footer a:hover { color: var(--tomato); }
           <legend>You coming? <span class="tag">PUBLIC</span></legend>
           <div class="radio-row">
             <label><input type="radio" name="attending" value="yes" checked> Yep, count us in</label>
-            <label><input type="radio" name="attending" value="maybe"> Maybe — keep me posted</label>
+            <label><input type="radio" name="attending" value="maybe"> Maybe (keep me posted)</label>
             <label><input type="radio" name="attending" value="no"> Can't make it</label>
           </div>
         </fieldset>
@@ -1626,7 +1720,7 @@ footer a:hover { color: var(--tomato); }
             <span class="tag">PUBLIC</span>
           </label>
           <select id="f-bringing">
-            <option value="">— pick a category —</option>
+            <option value="">· pick a category ·</option>
             <option>Main / Entrée</option>
             <option>Side Dish</option>
             <option>Salad</option>
@@ -1674,7 +1768,7 @@ footer a:hover { color: var(--tomato); }
             <input type="checkbox" id="f-meet-optin">
             <span>
               <strong>Want to be featured before the party?</strong><br>
-              We'd love to introduce you to the rest of the neighborhood on our Facebook group — a quick "meet the neighbors" post with a photo and a little about you. Check this box and we'll send you a short questionnaire (takes 5 mins, you can skip any question you want).
+              We'd love to introduce you to the rest of the neighborhood on our Facebook group with a quick "meet the neighbors" post that has a photo and a little about you. Check this box and we'll send you a short questionnaire (takes 5 mins, you can skip any question you want).
             </span>
           </label>
         </div>
@@ -1699,7 +1793,7 @@ footer a:hover { color: var(--tomato); }
 
     <section class="fb-block" aria-labelledby="fb-h">
       <h2 id="fb-h">Stay in the loop</h2>
-      <p>Private Facebook group for the neighborhood — for updates, photos after the party, lost dogs, and everything in between.</p>
+      <p>Private Facebook group for the neighborhood. For updates, photos after the party, lost dogs, and everything in between.</p>
       <a href="https://www.facebook.com/share/1CwjDzjPFg/?mibextid=wwXIfr" class="fb-cta" target="_blank" rel="noopener" aria-label="Join the Kitner, Shady &amp; Oviatt neighbors Facebook group (opens in new tab)">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         Join the FB group
@@ -1712,14 +1806,14 @@ footer a:hover { color: var(--tomato); }
     <p>The Kitner, Shady &amp; Oviatt Block Party · Saturday, August 1, 2026</p>
     <p>An annual tradition (we hope).</p>
     <p>Questions? Knock on <strong>7643 Kitner</strong> or call <a href="tel:+13304283462">(330)&nbsp;428-3462</a>.</p>
-    <p class="signoff">— See you in the neighborhood!</p>
+    <p class="signoff">See you in the neighborhood!</p>
   </footer>
 
 </div>
 
 <script>
 // ===========================================================================
-// Supabase config — anon key is meant to be public; security is enforced by
+// Supabase config: anon key is meant to be public; security is enforced by
 // Row Level Security policies (anon can INSERT into rsvps, can SELECT only
 // from the rsvps_public view, can INSERT into meet_the_neighbors)
 // ===========================================================================
@@ -1838,7 +1932,7 @@ async function loadRsvps() {
     renderList(rows);
   } catch (err) {
     console.error('Failed to load RSVPs:', err);
-    // Don't crash the page — just show the empty state
+    // Don't crash the page; just show the empty state
     renderList([]);
   }
 }
@@ -1846,7 +1940,7 @@ async function loadRsvps() {
 function renderList(rows) {
   const c = document.getElementById('list-rows');
   if (!rows || rows.length === 0) {
-    c.innerHTML = '<div class="list-empty">Nobody\'s signed up yet — be the first!</div>';
+    c.innerHTML = '<div class="list-empty">Nobody\'s signed up yet. Be the first!</div>';
     return;
   }
   const extrasMap = {
@@ -1861,7 +1955,7 @@ function renderList(rows) {
       noteParts.push('also bringing ' + r.extras.map(e => extrasMap[e] || e).join(', '));
     }
     if (r.attending === 'maybe') noteParts.unshift('(tentative)');
-    const note = noteParts.join(' · ') || '—';
+    const note = noteParts.join(' · ') || '·';
     return `
       <div class="list-row">
         <div class="r-name">${escapeHtml(r.name)}</div>
