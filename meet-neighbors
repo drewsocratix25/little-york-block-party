@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <meta name="supported-color-schemes" content="light">
-<title>Meet the Neighbors — Kitner, Shady &amp; Oviatt Block Party</title>
+<title>Meet the Neighbors · Kitner, Shady &amp; Oviatt Block Party</title>
 <meta name="description" content="A quick questionnaire so we can introduce you to the rest of the neighborhood before the block party.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -407,13 +407,13 @@ footer a {
   <a href="index.html" class="back-link">← Back to the block party</a>
 
   <header class="hdr">
-    <p class="hdr-tag">— before the party —</p>
+    <p class="hdr-tag">· before the party ·</p>
     <h1>Meet <span class="accent">the Neighbors</span></h1>
     <p class="hdr-sub">A few questions so we can introduce you to the neighborhood on our Facebook group.</p>
   </header>
 
   <section class="intro">
-    <p><strong>Here's the idea:</strong> in the weeks leading up to August 1, we want to introduce everybody across Kitner, Shady, and Oviatt to each other. We'll post a short profile of you on the neighborhood Facebook group — a photo, a few sentences about your household, what brought you here, what you're into.</p>
+    <p><strong>Here's the idea:</strong> in the weeks leading up to August 1, we want to introduce everybody across Kitner, Shady, and Oviatt to each other. We'll post a short profile of you on the neighborhood Facebook group: a photo, a few sentences about your household, what brought you here, what you're into.</p>
     <p>This is the questionnaire. Five minutes, tops. Skip anything you'd rather not share.</p>
     <p style="margin-top: 14px;"><strong>What we'll do with it:</strong></p>
     <ul class="intro-bullets">
@@ -509,7 +509,7 @@ footer a {
         <label class="field-label" for="m-northfield">
           What do you love about Northfield / the area?
         </label>
-        <span class="field-hint">Favorite places, restaurants, the parks, the schools — whatever you'd recommend.</span>
+        <span class="field-hint">Favorite places, restaurants, the parks, the schools, whatever you'd recommend.</span>
         <textarea id="m-northfield" placeholder="A few favorites..."></textarea>
       </div>
 
@@ -535,7 +535,7 @@ footer a {
       <p class="section-label">a photo</p>
       <p class="section-headline">A family photo</p>
       <p style="font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.55; color: var(--ink); margin-bottom: 16px;">
-        Anything you'd be happy to share with the neighborhood — household, pets, you doing something you love. Doesn't need to be perfect.
+        Anything you'd be happy to share with the neighborhood: household, pets, you doing something you love. Doesn't need to be perfect.
       </p>
 
       <label class="photo-upload" for="m-photo">
@@ -550,7 +550,7 @@ footer a {
         </div>
         <div class="photo-upload-text">
           Tap to upload a photo
-          <span class="small">jpg, png — any size</span>
+          <span class="small">jpg, png, any size</span>
         </div>
         <input type="file" id="m-photo" accept="image/*" onchange="previewPhoto(event)">
       </label>
@@ -566,7 +566,7 @@ footer a {
     </div>
 
     <div class="confirmation" id="confirmation" role="status" aria-live="polite">
-      <h4>Got it — thanks!</h4>
+      <h4>Got it. Thanks!</h4>
       <p>We'll draft your profile and send it over before posting. Talk soon.</p>
     </div>
 
