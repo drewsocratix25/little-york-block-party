@@ -602,7 +602,7 @@ select:focus-visible, textarea:focus-visible {
 
 /* ════════════════ THANKS HUNTER ════════════════ */
 .thanks-hunter {
-  max-width: 580px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -611,9 +611,13 @@ select:focus-visible, textarea:focus-visible {
   position: relative;
   background: var(--cream);
   border: 3px solid var(--ink);
-  padding: 28px 32px 26px;
+  padding: 30px 32px 28px;
   box-shadow: 7px 7px 0 var(--sunny);
   transform: rotate(-0.7deg);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 30px;
+  align-items: center;
 }
 
 .thanks-stars {
@@ -629,6 +633,45 @@ select:focus-visible, textarea:focus-visible {
   color: var(--tomato);
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+/* Polaroid frame for Hunter's photo */
+.hunter-photo {
+  margin: 0;
+  background: white;
+  padding: 10px 10px 38px;
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(2deg);
+  position: relative;
+  flex-shrink: 0;
+}
+.hunter-photo img {
+  display: block;
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+}
+.hunter-photo figcaption {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 26px;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+.hunter-photo figcaption .star {
+  color: var(--tomato);
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.thanks-text {
+  min-width: 0;
 }
 
 .thanks-card h2 {
@@ -671,6 +714,22 @@ select:focus-visible, textarea:focus-visible {
   padding: 6px 16px;
   border: 1.5px dashed var(--ink);
   transform: rotate(0.5deg);
+}
+
+/* Stack vertically on smaller screens */
+@media (max-width: 640px) {
+  .thanks-card {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 32px 24px 26px;
+  }
+  .hunter-photo {
+    justify-self: center;
+  }
+  .hunter-photo img {
+    width: 200px;
+    height: 266px;
+  }
 }
 
 /* ════════════════ HELP FUND THE EXTRAS (tiered) ════════════════ */
@@ -1536,13 +1595,19 @@ footer a:hover { color: var(--tomato); }
     <section class="thanks-hunter" aria-label="A thank you to Hunter">
       <div class="thanks-card">
         <div class="thanks-stars">★ ★ ★</div>
-        <h2>Big thanks to <span class="name">Hunter</span></h2>
-        <p>
-          Who's been more fired up about this block party than anyone on the loop. His designs inspired the flyer, and he personally walked door to door delivering every single one. <strong>If a flyer brought you here, that was him.</strong> He can't make the party himself, sadly, but he played a huge role getting us here.
-        </p>
-        <p style="text-align:center;">
-          <span class="thanks-handoff">Catch him biking or scootering by? Give him a huge thanks 👋</span>
-        </p>
+        <figure class="hunter-photo">
+          <img src="hunter.jpg" alt="Hunter, who delivered every block party flyer on the loop" width="180" height="240">
+          <figcaption><span class="star">★</span>Hunter<span class="star">★</span></figcaption>
+        </figure>
+        <div class="thanks-text">
+          <h2>Big thanks to <span class="name">Hunter</span></h2>
+          <p>
+            Who's been more fired up about this block party than anyone on the loop. His designs inspired the flyer, and he personally walked door to door delivering every single one. <strong>If a flyer brought you here, that was him.</strong> He can't make the party himself, sadly, but he played a huge role getting us here.
+          </p>
+          <p style="text-align:center;">
+            <span class="thanks-handoff">Catch him biking or scootering by? Give him a huge thanks 👋</span>
+          </p>
+        </div>
       </div>
     </section>
 
